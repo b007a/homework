@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+   int highwayNumber;
+
+   cin >> highwayNumber;
+
+   //check if highwayNumber's length is 1, and its digit is 5
+   if ( (to_string(highwayNumber).length() == 1) && (to_string(highwayNumber).at(0) == '5') ) {
+      cout << "I-" << highwayNumber << " is primary, going north/south." << endl;
+   }
+   //check if highwayNumber's length is 3, and its second digit is 0
+   else if( (to_string(highwayNumber).length() == 3) && (to_string(highwayNumber).at(1) == '0') ) {
+     cout << "I-" << highwayNumber << " is auxiliary, serving I-" << to_string(highwayNumber).at(2) << ", going north/south." << endl;
+   }
+   //check if highwayNumber's length is 2, and its second digit is 5
+  else if ( (to_string(highwayNumber).length() == 2) && (to_string(highwayNumber).at(1) == '5') ) {
+      cout << "I-" << highwayNumber << " is primary, going north/south." << endl;
+   }
+   //check if highwayNumber's length is 2, and its second digit is 0
+   else if ( (to_string(highwayNumber).length() == 2) && (to_string(highwayNumber).at(1) == '0') ) {
+      cout << "I-" << highwayNumber << " is primary, going east/west." << endl;
+   }
+   //check if highwayNumber's length is 3, and its third digit is 5
+   else if( (to_string(highwayNumber).length() == 3) && (to_string(highwayNumber).at(2) == '5') ) {
+     cout << "I-" << highwayNumber << " is auxiliary, serving I-" << to_string(highwayNumber).at(1) << to_string(highwayNumber).at(2) << ", going north/south." << endl;
+   }
+   //check if highwayNumber's length is 3, and its third digit is 0
+   else if( (to_string(highwayNumber).length() == 3) && (to_string(highwayNumber).at(2) == '0') ) {
+     cout << "I-" << highwayNumber << " is auxiliary, serving I-" << to_string(highwayNumber).at(1) << to_string(highwayNumber).at(2) << ", going east/west." << endl;
+   }
+
+   else {
+     cout << highwayNumber << " is not a valid interstate highway number." << endl;
+   }
+
+   return 0;
+}
